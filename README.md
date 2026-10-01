@@ -17,9 +17,9 @@
 5. [Scan Results](#5-scan-results)
 6. [Risk Analysis](#6-risk-analysis)
 7. [What I Learned](#7-what-i-learned)
-8. [Tools & Technologies Used](#8-tools--technologies-used)
-09. [Conclusion](#09-conclusion)
-10. [evidence](#10-evidence)
+8. [Interview Questions & Answers](#8-interview-questions--answers)
+9. [Tools & Technologies Used](#9-tools--technologies-used)
+10. [Conclusion](#10-conclusion)
 
 ---
 
@@ -121,9 +121,35 @@ Through this task, I gained practical experience in:
 
 ---
 
--
+## 8. Interview Questions & Answers
 
-## 8. Tools & Technologies Used
+1. What is an open port?
+An open port is a network port configured to accept incoming connections. It acts as a door where a service (web server, database, etc.) listens for requests.
+
+2. How does Nmap perform a TCP SYN scan?
+Nmap sends a SYN packet. If the port is open, the target replies with SYN-ACK. Nmap then sends RST to close the connection before it's fully established — a "half-open" scan that is stealthy because the full handshake never completes.
+
+3. What risks are associated with open ports?
+Each open port is a potential entry point. Risks include exploitation of vulnerable software, unauthorized data access, and lateral movement within the network.
+
+4. Explain the difference between TCP and UDP scanning.
+TCP is connection-oriented and reliable (requires a handshake). UDP is connectionless and unreliable (no handshake). TCP scans are faster and more accurate; UDP scans are slower and often filtered by firewalls.
+
+5. How can open ports be secured?
+Close unnecessary services, use firewalls to restrict access, patch software regularly, enforce strong authentication, and encrypt traffic (e.g., SSH instead of Telnet).
+
+6. What is a firewall's role regarding ports?
+A firewall monitors and controls traffic based on rules. It can allow or block traffic on specific ports, hiding open ports from unauthorized access.
+
+7. What is a port scan and why do attackers perform it?
+A port scan identifies open ports and services on a target. Attackers perform it during reconnaissance to map the network and find weak entry points.
+
+8. How does Wireshark complement port scanning?
+Wireshark captures the packets sent during a scan. Nmap shows what is open; Wireshark shows how the conversation happened — useful for verifying firewall behavior and analyzing scan evasion.
+
+---
+
+## 9. Tools & Technologies Used
 
 - Nmap 7.99 — Port scanning and service detection
 - Kali Linux — Reconnaissance platform
@@ -132,7 +158,7 @@ Through this task, I gained practical experience in:
 
 ---
 
-## 9. Conclusion
+## 10. Conclusion
 
 This task provided hands-on experience with network reconnaissance — a core skill in cybersecurity. By scanning a real home network, I discovered multiple devices with exposed services, including a high-risk PostgreSQL database on an IoT device. The exercise reinforced the importance of regular network audits, firewall configuration, and IoT device hardening.
 
@@ -142,7 +168,6 @@ A home network is not as safe as it seems. Every open port is a potential doorwa
 ---
 
 End of Report
-
 
 ## 10.EVIDENCE
 <img width="1920" height="922" alt="IP ADRESS" src="https://github.com/user-attachments/assets/9dd12082-bdee-4070-a163-dd5ee614f802" />
