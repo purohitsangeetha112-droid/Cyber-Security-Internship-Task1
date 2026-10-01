@@ -1,0 +1,76 @@
+IP ADDRESS
+
+┌──(sangu㉿kali)-[~]
+└─$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:8a:35:d2 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.2/24 brd 192.168.1.255 scope global dynamic noprefixroute eth0
+       valid_lft 86314sec preferred_lft 86314sec
+    inet6 2401:4900:8824:dea5:8dca:7424:38c6:bfdf/64 scope global dynamic noprefixroute 
+       valid_lft 86317sec preferred_lft 86317sec
+    inet6 fe80::2bf3:d1cd:9a7e:6ce3/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3:docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether c2:b1:d8:41:a6:e7 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+
+
+RESULT 
+
+ cat scan_results.txt
+# Nmap 7.99 scan initiated Thu Oct  1 10:00:45 2026 as: /usr/lib/nmap/nmap -sS -T4 --max-retries 1 --host-timeout 30s -oN scan_results.txt 192.168.1.0/24
+Warning: 192.168.1.1 giving up on port because retransmission cap hit (1).
+Nmap scan report for dsldevice.lan (192.168.1.1)
+Host is up (0.0098s latency).
+Skipping host dsldevice.lan (192.168.1.1) due to host timeout
+Nmap scan report for 192.168.1.5
+Host is up (0.0048s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT     STATE SERVICE
+7000/tcp open  afs3-fileserver
+8001/tcp open  vcom-tunnel
+8002/tcp open  teradataordbms
+8080/tcp open  http-proxy
+9080/tcp open  glrpc
+9110/tcp open  unknown
+MAC Address: 1C:AF:4A:0C:AF:9C (Samsung Electronics)
+
+Nmap scan report for 192.168.1.8
+Host is up (0.019s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT      STATE SERVICE
+50389/tcp open  unknown
+62078/tcp open  iphone-sync
+MAC Address: 1E:94:03:E6:B6:78 (Unknown)
+
+Nmap scan report for 192.168.1.9
+Host is up (0.0058s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE
+8008/tcp open  http
+8009/tcp open  ajp13
+8443/tcp open  https-alt
+9000/tcp open  cslistener
+MAC Address: BC:C7:DA:61:B7:F3 (Earda Technologies)
+
+Nmap scan report for 192.168.1.10
+Host is up (0.0013s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+5432/tcp open  postgresql
+MAC Address: 50:BB:B5:5F:49:DC (AzureWave Technology)
+
+Nmap scan report for 192.168.1.11
+Host is up (0.031s latency).
+Skipping host 192.168.1.11 due to host timeout
+Nmap scan report for 192.168.1.2
+Host is up.
+Skipping host 192.168.1.2 due to host timeout
+# Nmap done at Thu Oct  1 10:01:53 2026 -- 256 IP addresses (7 hosts up) scanned in 67.22 seconds
